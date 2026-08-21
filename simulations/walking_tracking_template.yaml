@@ -1,0 +1,51 @@
+collocation:
+  name: script2d_torque_driven
+  description: Template setup file for 2D gait tracking with treadmill contact.
+  settings:
+    nnodes: 100
+    discretization:
+      type: euler
+      args:
+        mode: backward
+        vars: q
+        weight: 1
+        adaptive_h: false
+    tol: 5e-4
+    constr_viol_tol: 5e-3
+    max_iter: 7000
+
+  objectives:
+    - name: effort_term
+      weight: 1 #für 1.6 war 0.5 besser
+      args:
+        exponent: 2
+    - name: track_angles
+      weight: 0.5
+      args:
+        presegmented: true
+        exclude: ['pelvis_tx', 'pelvis_ty', 'pelvis_tilt']
+    - name: track_grf
+      # GRFs are converted to body-weight units inside the objective. For P1,
+      # 9e3 preserves approximately the influence of the former 0.02/N^2 term.
+      weight: 5e3
+      args:
+        presegmented: true
+    - name: track_duration
+      weight: 0 # 1 #25
+      args:
+        datafile: "data/gait_data.csv"
+
+  constraints:
+    - name: dynamics_unified
+      weight: 1
+    - name: periodicity
+      weight: 1
+      args:
+        symmetry: false
+        
+
+  bounds:
+    from_model: true
+    start_at_origin: true
+    dur: [0.4, 1.7]
+    speed: [-2.0, 5]

@@ -1,0 +1,12 @@
+model:
+  name: gait2d_scaled.xml
+  additional_parameters:
+    joints:
+      jointK2: 5000
+      jointD: 2
+    ground_contact:
+      replace_existing: true
+      file: gait2d_ground_contact_huntcrossley_6spheres.xml
+    actuators:
+      replace_existing: true
+      file: gait2d_actuators_scaled.xml

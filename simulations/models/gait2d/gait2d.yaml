@@ -1,0 +1,17 @@
+model: 
+  name: gait2d.xml
+  additional_parameters:
+    joints:
+      jointK2: 5000 # from gait2dc_par.xls, not a mujoco parameter --> this should be in "default.yaml" so that it is overwriteable when 
+      jointD: 2 # from gait2dc_par.xls, not a mujoco parameter 
+    ground_contact:
+      replace_existing: true # overwrite any existing mujoco ground contact parameters
+      file: "gait2d_ground_contact.xml" # Load from definition file
+    actuators:
+      replace_existing: true # overwrite any existing mujoco muscle parameters --> in this case, there aren't any muscles defined
+      file: "gait2d_actuators.xml" # Load from definition file
+
+
+# Conf setup (using omegaconf probably):
+# When loading a conf file, also load defaults, then merge
+# Conf starts with "model", therefore load defaults/model.yaml.
