@@ -5,5 +5,5 @@ Code for the realistic treadmill controller (predicts instantaneous treadmill sp
   this folder contains the code for fitting and validating the realisitic treadmill controller on experimental data.
   it also contains the code for the experimental data (pre)processing
 
-  -simulations:
+- simulations:
   this folder contains the code to conduct optimcal control gait simulations with the realistic treadmill controller. 
