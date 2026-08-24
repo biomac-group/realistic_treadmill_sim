@@ -6,4 +6,6 @@ Code for the realistic treadmill controller (predicts instantaneous treadmill sp
   it also contains the code for the experimental data (pre)processing
 
 - simulations:
-  this folder contains the code to conduct optimcal control gait simulations with the realistic treadmill controller. 
+  this folder contains the code to conduct optimcal control gait simulations with the realistic treadmill controller.
+
+## the experimental data, as well as simulation results, can be downloaded here: [ADD LINK TO ZENODO]. 
