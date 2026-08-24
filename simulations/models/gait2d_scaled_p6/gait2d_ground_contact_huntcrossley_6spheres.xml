@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ground_contact_model type="contact_spheres" force_law="huntcrossley">
+  <default>
+    <contact_point name="default" body="default" pos="0 0 0" radius="0.03" stiffness="2e6" dissipation="2.0" static_friction="0.8" dynamic_friction="0.8" viscous_friction="0.0" transition_velocity="0.1" />
+  </default>
+  <ContactSphere name="heel_r" body="foot_r" pos="-0.0393333333 -0.0694200000 0.0000000000" />
+  <ContactSphere name="rear_mid_r" body="foot_r" pos="0.0020070865 -0.0694200000 0.0000000000" />
+  <ContactSphere name="mid_r" body="foot_r" pos="0.0433475062 -0.0694200000 0.0000000000" />
+  <ContactSphere name="fore_mid_r" body="foot_r" pos="0.0846879260 -0.0694200000 0.0000000000" />
+  <ContactSphere name="forefoot_r" body="foot_r" pos="0.1260283457 -0.0694200000 0.0000000000" />
+  <ContactSphere name="toe_r" body="foot_r" pos="0.1673687655 -0.0694200000 0.0000000000" />
+  <ContactSphere name="heel_l" body="foot_l" pos="-0.0393333333 -0.0694200000 0.0000000000" />
+  <ContactSphere name="rear_mid_l" body="foot_l" pos="0.0020070865 -0.0694200000 0.0000000000" />
+  <ContactSphere name="mid_l" body="foot_l" pos="0.0433475062 -0.0694200000 0.0000000000" />
+  <ContactSphere name="fore_mid_l" body="foot_l" pos="0.0846879260 -0.0694200000 0.0000000000" />
+  <ContactSphere name="forefoot_l" body="foot_l" pos="0.1260283457 -0.0694200000 0.0000000000" />
+  <ContactSphere name="toe_l" body="foot_l" pos="0.1673687655 -0.0694200000 0.0000000000" />
+</ground_contact_model>

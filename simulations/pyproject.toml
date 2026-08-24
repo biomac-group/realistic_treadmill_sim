@@ -1,0 +1,37 @@
+[project]
+name = "ideal-treadmill-biosym"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "biosym[dashboard]>=0.1.12",
+    "cmaes>=0.13.0",
+    "gh>=0.0.4",
+    "ipykernel>=7.2.0",
+    "mat-io>=0.6.1",
+    "nimblephysics==0.10.44",
+    "optuna>=4.8.0",
+    "pyqt5>=5.15.11",
+    "scikit-learn>=1.5",
+    "scipy>=1.13",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
+    "torch>=2.4",
+    "xarray>=2025.4.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "tets",
+]
+
+[tool.uv.sources]
+biosym = { git = "https://github.com/biomac-group/biosym.git", tag = "0.1.12" }
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["src*"]

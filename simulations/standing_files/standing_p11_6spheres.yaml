@@ -1,0 +1,33 @@
+collocation:
+  name: standing_p11_huntcrossley_6spheres
+  description: P11 standing equilibrium with six Hunt-Crossley spheres per foot.
+  settings:
+    model: models/gait2d_scaled_p11/gait2d_scaled_huntcrossley_6spheres.yaml
+    nnodes: 1
+    discretization:
+      type: euler
+      args:
+        mode: backward
+        adaptive_h: false
+    output:
+      file: result_HC/p11/huntcrossley_6spheres/standing.pkl
+    tol: 5e-4
+    constr_viol_tol: 5e-3
+    max_iter: 7000
+
+  objectives:
+    - name: effort_term
+      weight: 1
+      args:
+        exponent: 3
+
+  constraints:
+    - name: dynamics
+      weight: 1.0
+
+  initial_guess:
+    type: default
+
+  bounds:
+    from_model: true
+    start_at_origin: true

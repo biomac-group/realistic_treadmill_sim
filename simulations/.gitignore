@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+_debug/
+.biosym/
+result/
+result_HC/
+.codex_explanations
+.codex
+codex_explanations/
+
+# Virtual environments
+.venv
+.env
+.config/
+.vscode/
+.ipython/
+biosym/
+.vscode/
+.cache/
+.conda/
+codex_explanations

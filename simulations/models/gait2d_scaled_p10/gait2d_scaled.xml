@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="gait2d">
+  <compiler inertiafromgeom="auto" angle="radian" balanceinertia="true" boundmass="0.001" boundinertia="0.001">
+    <lengthrange inttotal="50" useexisting="true" />
+  </compiler>
+  <default>
+    <joint limited="true" damping="0.01" armature="0.1" stiffness="2" />
+    <geom rgba="0.8 0.6 .4 1" margin="0.001" />
+    <site size="0.001094444444" />
+    <tendon width="0.001" rgba=".95 .3 .3 1" limited="false" />
+    <default class="muscle">
+      <muscle ctrllimited="true" ctrlrange="0 1" scale="200" />
+    </default>
+    <default class="motor">
+      <general gainprm="5 0 0 0 0 0 0 0 0 0" />
+    </default>
+  </default>
+  <option gravity="0 -9.81 0" integrator="RK4" timestep="0.01" />
+  <size njmax="1000" nconmax="400" nuser_jnt="1" />
+  <worldbody>
+    <geom name="floor" pos="0 0 0" size="10 10 0.125" type="plane" material="MatPlane" condim="3" />
+    <body name="pelvis" pos="0 0.985 0" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+      <site name="vis_torso" pos="0 0.5472222222 0" size="0.01094444444" rgba="0.8 0.6 .4 1" />
+      <inertial pos="-0 0.3452972222 0" mass="69.79332" fullinertia="5.223090579 5.223090579 5.223090579 0 0 0" />
+      <joint name="pelvis_tx" type="slide" pos="0 0 0" axis="       1        0        0" limited="true" range="      -3        10" ref="0" armature="0" damping="0.0" stiffness="0" />
+      <joint name="pelvis_ty" type="slide" pos="0 0 0" axis="       0        1        0" limited="true" range="      -0.5        10" ref="0" armature="0" damping="0.0" stiffness="0" />
+      <joint name="pelvis_tilt" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -1.57   1.57" ref="0" armature="0" damping="0.0" stiffness="0" />
+      <body name="femur_r" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+        <inertial pos="-0 -0.2090388889 0" mass="10.294" fullinertia="0.2502217142 0.2502217142 0.2502217142 0 0 0" />
+        <joint name="hip_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -1.5707963268   2.7925268032" />
+        <body name="tibia_r" pos="0 -0.48265 0" quat="1.0 0.0 0.0 0.0">
+          <inertial pos="-0 -0.209805 0" mass="4.78671" fullinertia="0.1025876148 0.1055468729 0.1025876148 0 0 0" />
+          <joint name="knee_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -2.7925268032   0.0" />
+          <body name="foot_r" pos="0 -0.48462 0" quat="1.0 0.0 0.0 0.0">
+            <inertial pos="0.08405333333 -0.038415 0" mass="1.49263" fullinertia="0.0302501941 0.0302501941 0.0302501941 0 0 0" />
+            <joint name="ankle_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -1.0471975512   1.0471975512" />
+          </body>
+        </body>
+      </body>
+      <body name="femur_l" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+        <inertial pos="-0 -0.2090388889 0" mass="10.294" fullinertia="0.2502217142 0.2502217142 0.2502217142 0 0 0" />
+        <joint name="hip_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -1.5707963268   2.7925268032" />
+        <body name="tibia_l" pos="0 -0.48265 0" quat="1.0 0.0 0.0 0.0">
+          <inertial pos="-0 -0.209805 0" mass="4.78671" fullinertia="0.1025876148 0.1055468729 0.1025876148 0 0 0" />
+          <joint name="knee_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -2.7925268032   0" />
+            <body name="foot_l" pos="0 -0.48462 0" quat="1.0 0.0 0.0 0.0">
+                <inertial pos="0.08405333333 -0.038415 0" mass="1.49263" fullinertia="0.0302501941 0.0302501941 0.0302501941 0 0 0" />
+                <joint name="ankle_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="true" range=" -1.0471975512   1.0471975512" />
+            </body>
+          </body>
+        </body>        
+      </body>
+  </worldbody>
+</mujoco>
