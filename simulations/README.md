@@ -8,7 +8,10 @@ with six Hunt-Crossley contact spheres.
 
 ## Local setup
 you need to install biosym (https://github.com/biomac-group/biosym.git) to run the simulations. 
-this can be done by cloning the repo or via "pip install biosym"
+this can be done by cloning the repo or via 
+```bash
+pip install biosym
+```
 
 The OpenSim installation used by this project may require its Ipopt shared
 library to be preloaded. Set its location for the current shell before using
