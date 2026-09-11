@@ -1,4 +1,4 @@
-The experimental data can be downloaded from XX. THey should be added as a folder data into this Folder.
+The experimental data can be downloaded from 10.5281/zenodo.22711564. THey should be added as a folder data into a folder at the same level as the experiments folder (otherwise, the path may have to be changed within the notebooks)
 
 * get\_participant\_characteristics: computes participants' mass and BMI from a static trial.
 * residual\_analysis: residual analysis to determine the filder cut-off frequency for the belt speed data
